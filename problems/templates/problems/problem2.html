@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Problem2
+{% endblock title %}
+
+{% block img %}https://s3.us-west-2.amazonaws.com/secure.notion-static.com/197edb27-55ab-4412-8d8b-d7adb4872bda/Weird_Language.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200825T080620Z&X-Amz-Expires=86400&X-Amz-Signature=bd1ad9db845e2fcfafae81407dc3c69dcc08c3a0a622cc0441eded28dcd7a6d5&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Weird_Language.png%22{% endblock %}
+{% block content %}
+    <form action="{% url 'problems:check2' %}" method="POST">
+        {% csrf_token %}
+        <label for="answer2">정답을입력해주세요: </label>
+        <input type="text" name="answer2" id="answer2" >
+        <input type="submit">
+    </form>
+{% endblock content %}

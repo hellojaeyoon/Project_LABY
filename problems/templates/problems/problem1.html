@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+Problem1
+{% endblock %}
+
+{% block img %}https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f931241d-1d52-4745-8cf4-42cdc84bef9d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200825T073753Z&X-Amz-Expires=86400&X-Amz-Signature=4c2c65eace080f1fdb449b356a456b4835f3a0e3c345d4a1341d0ad2ee908641&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22{% endblock %}
+{% block content %}
+    <form action="{% url 'problems:check' %}" method="POST">
+        {% csrf_token %}
+        <label for="answer1">정답을입력해주세요: </label>
+        <input type="text" name="answer1" id="answer1" >
+        <input type="submit">
+    </form>
+
+{% endblock %}

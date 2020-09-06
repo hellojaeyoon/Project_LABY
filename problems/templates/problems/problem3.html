@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Problem3
+{% endblock title %}
+
+{% block img %}https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d8925db8-f3dc-4779-aa0a-cb055d6d4879/Criminal_Mind.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20200826%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20200826T060907Z&X-Amz-Expires=86400&X-Amz-Signature=7258441a3114382a937ed341d5e88b4e25c6cbf519b13c58e3f39d8c442152ab&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Criminal_Mind.png%22{% endblock %}
+{% block content %}
+    <form action="{% url 'problems:check3' %}" method="POST">
+        {% csrf_token %}
+        <label for="answer3">정답을입력해주세요: </label>
+        <input type="text" name="answer3" id="answer3" >
+        <input type="submit">
+    </form>
+{% endblock content %}
