@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{{% block title %}
+<h1>HOME</h1>
+{% endblock title %}}
+
+
+{% block img %}
+{% endblock img %}
+
+
+{% block content %}
+    <p>문제: {{ problem.title }}</p>
+    <a href="{% url 'problems:detail' problem.pk %}">시작</a>
+    <hr>
+{% endblock content %}

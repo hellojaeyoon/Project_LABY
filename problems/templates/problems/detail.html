@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{{% block title %}
+{{ problem.title }}
+{% endblock title %}}
+
+
+{% block img %}
+<img src="{{ problem.content.url }}" alt="안뜸">
+{% endblock img %}
+
+
+{% block content %}
+    <form action="{% url 'problems:check' problem.pk %}" method="POST">
+        {% csrf_token %}
+        <label for="answer">다음 페이지에서 정답을 입력해주세요: </label>
+        <input type="submit" value="정답 입력하러 가기"> 
+    </form>
+{% endblock content %}
