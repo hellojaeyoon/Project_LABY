@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<h1>정답은?</h1>
+{% endblock title %}
+
+
+{% block content %}
+    <form action="{% url 'problems:detail' problem.pk %}" method="POST">
+    {% csrf_token %}
+    <label for="next">정답을 맞히고 다음으로 넘어가세요.</label>
+    <input type="text" name="answer" id="answer" >
+    <input type="submit">
+    </form>
+{% endblock content %}
